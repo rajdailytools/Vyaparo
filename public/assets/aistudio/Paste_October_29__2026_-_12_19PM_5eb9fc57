@@ -1,0 +1,1707 @@
+PROJECT: VYAPARO
+
+Build a Complete, Premium, Production-Ready Business Management SaaS Platform
+
+Act as a senior SaaS architect, senior full-stack developer, UI/UX designer, database architect, security engineer, and product manager.
+
+Build a complete, modern, premium, responsive business management platform named Vyaparo.
+
+This must be a functional application, not merely a landing page, UI prototype, static dashboard, or collection of non-working buttons.
+
+The platform should help small businesses in India manage billing, sales, expenses, customer records, udhaar (credit), inventory, profit and loss, payment reminders, and business analytics from one place.
+
+The application must be designed for deployment using GitHub and Vercel.
+
+Build the application in a maintainable, modular architecture with secure authentication, a persistent database, server-side validation, and a scalable subscription system.
+
+Do not claim that a feature is functional until its implementation is complete and tested.
+
+==================================================
+
+1. BRAND IDENTITY
+   ==================================================
+
+Brand name: Vyaparo
+
+Tagline:
+"Your Business. One Smart Platform."
+
+Alternative Hindi tagline:
+"Aapke Business Ka Smart Hisaab."
+
+Brand positioning:
+A premium, easy-to-use business management platform for Indian small businesses.
+
+Target users:
+
+- Kirana shops
+- Retail stores
+- Mobile shops
+- Clothing stores
+- Electronic shops
+- Wholesalers
+- Small distributors
+- Home businesses
+- Freelancers and service providers
+- Small business owners who currently use notebooks or spreadsheets
+
+Brand personality:
+
+- Trustworthy
+- Intelligent
+- Modern
+- Professional
+- Friendly
+- Simple enough for first-time digital users
+- Premium without looking complicated
+
+Create an original logo for Vyaparo.
+
+The logo should combine a stylized V with a subtle upward-growth concept.
+
+Avoid copying any existing company's logo.
+
+Provide:
+
+- Full logo
+- Icon-only logo
+- Horizontal logo
+- Light-background variant
+- Dark-background variant
+- Favicon
+- Browser application icon
+
+Use SVG where appropriate.
+
+==================================================
+2. EXACT BRAND COLOUR SYSTEM
+
+Use the following colour palette consistently throughout the application.
+
+Primary dark forest green:
+#0B2E26
+
+Primary emerald green:
+#0F8F5F
+
+Accent lime green:
+#A7F432
+
+Light mint:
+#E8F9F0
+
+Main background:
+#F8FFF9
+
+Primary text:
+#15251F
+
+Secondary text:
+#61736A
+
+Borders:
+#DCE9E1
+
+White:
+#FFFFFF
+
+Error:
+#DC2626
+
+Warning:
+#F59E0B
+
+Information:
+#2563EB
+
+Success:
+#15803D
+
+Design rules:
+
+1. Use emerald green for primary buttons, selected navigation states, and brand highlights.
+2. Use forest green for the sidebar, footer, and selected premium sections.
+3. Use lime green sparingly for important highlights and call-to-action accents.
+4. Use mint backgrounds for cards, supporting sections, and informational panels.
+5. Use off-white for the main application background.
+6. Maintain accessible contrast for text, buttons, forms, and charts.
+7. Never use lime green for long paragraphs.
+8. Avoid excessive gradients, unnecessary animations, and excessive shadows.
+9. Provide a polished light theme first.
+10. Build a dark theme only if it can be implemented consistently and accessibly.
+
+The overall result should resemble a premium international SaaS product, not a generic website template.
+
+==================================================
+3. TECHNICAL STACK
+
+Use a modern, stable, maintainable technology stack.
+
+Frontend:
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Reusable component architecture
+- Lucide icons
+- React Router
+- React Hook Form
+- Zod validation
+- A reliable charting library such as Recharts
+
+Backend and data:
+
+- Supabase PostgreSQL database
+- Supabase Authentication
+- Supabase Row Level Security
+- Supabase Storage only when needed
+- Server-side functions for sensitive operations
+- Vercel Functions or Supabase Edge Functions where appropriate
+
+Testing:
+
+- Vitest
+- React Testing Library
+- Playwright for important end-to-end flows
+
+Deployment:
+
+- GitHub repository
+- Vercel production deployment
+- Environment variables for secrets and configuration
+
+Use compatible, stable package versions.
+
+Keep dependencies reasonable.
+
+Do not put secret keys, service-role credentials, payment secrets, or private API credentials in frontend code.
+
+Use the Supabase publishable/anon key only with properly configured Row Level Security and appropriate authentication policies.
+
+Do not rely on client-side checks as the only security mechanism.
+
+Do not store business records, authentication credentials, or subscription entitlements solely in localStorage.
+
+localStorage may be used for non-sensitive preferences such as theme, temporary UI state, and dismissed tips.
+
+Create a complete project with:
+
+- package.json
+- index.html
+- src/
+- public/
+- supabase/migrations/
+- supabase/seed.sql if useful
+- tests/
+- .env.example
+- README.md
+- vercel.json only when required
+- Appropriate TypeScript configuration
+- Production build configuration
+
+Do not hardcode deployment-specific URLs.
+
+==================================================
+4. WEBSITE ROUTES
+
+Create the following public routes:
+
+/
+Premium landing page
+
+/features
+All product features
+
+/pricing
+Subscription plans
+
+/about
+About Vyaparo
+
+/contact
+Contact form and support details
+
+/help
+Help centre
+
+/privacy
+Privacy policy
+
+/terms
+Terms of service
+
+/refund-policy
+Refund and cancellation policy
+
+/security
+Security information
+
+/login
+Sign in
+
+/signup
+Create account
+
+/forgot-password
+Password recovery
+
+/auth/callback
+Authentication callback if required
+
+/dashboard
+Main business dashboard
+
+/dashboard/sales
+Sales records
+
+/dashboard/invoices
+Invoice management
+
+/dashboard/purchases
+Purchase records
+
+/dashboard/expenses
+Expense management
+
+/dashboard/customers
+Customer management
+
+/dashboard/suppliers
+Supplier management
+
+/dashboard/udhaar
+Credit and payment tracking
+
+/dashboard/inventory
+Inventory management
+
+/dashboard/reports
+Financial and business reports
+
+/dashboard/ai-assistant
+AI business assistant
+
+/dashboard/reminders
+Payment and task reminders
+
+/dashboard/settings
+Business settings
+
+/dashboard/team
+Team and staff management
+
+/dashboard/subscription
+Subscription and billing management
+
+/dashboard/activity
+Activity history
+
+/dashboard/import-export
+Data import and export
+
+Protect all private routes.
+
+Unauthenticated users must be redirected to login when accessing protected routes.
+
+After authentication, redirect users to their business dashboard.
+
+Do not expose private records through public routes.
+
+==================================================
+5. PREMIUM PUBLIC LANDING PAGE
+
+Create an impressive, conversion-focused landing page.
+
+Header:
+
+- Vyaparo logo
+- Features
+- How It Works
+- Pricing
+- For Businesses
+- Resources
+- Login
+- Get Started Free
+
+The header must be responsive.
+
+On mobile, use a clean hamburger menu.
+
+Hero section:
+
+Eyebrow:
+"SMART BUSINESS MANAGEMENT"
+
+Headline:
+"Run Your Business Smarter. Grow With Confidence."
+
+Supporting text:
+"Manage billing, inventory, expenses, customer credit and business performance from one simple platform."
+
+Hindi supporting text:
+"Billing, stock, udhaar, kharcha aur profit — sab kuch ek hi jagah."
+
+Primary CTA:
+"Start Free"
+
+Secondary CTA:
+"Explore Features"
+
+Add a polished dashboard preview showing:
+
+- Today's sales
+- Expenses
+- Outstanding customer credit
+- Estimated gross profit
+- Sales trends
+- Low-stock products
+- Recent transactions
+
+Use original UI illustrations, charts, and CSS-based dashboard mockups.
+
+Do not use fake customer testimonials or fabricated statistics.
+
+Never claim that Vyaparo already serves thousands of businesses unless that is independently verified.
+
+Landing page sections:
+
+1. Hero
+2. Business problems we solve
+3. Feature overview
+4. Product dashboard preview
+5. Smart billing
+6. Customer credit management
+7. Inventory management
+8. Business analytics
+9. AI business assistant
+10. Mobile-friendly experience
+11. How Vyaparo works
+12. Pricing plans
+13. Security and data protection
+14. Frequently asked questions
+15. Final CTA
+16. Complete footer
+
+The landing page must load quickly and work well on mobile devices.
+
+==================================================
+6. AUTHENTICATION AND ONBOARDING
+
+Implement real Supabase authentication.
+
+Required:
+
+- Email and password signup
+- Login
+- Logout
+- Email verification
+- Forgot password
+- Password reset
+- Session persistence
+- Protected routes
+- Clear validation errors
+- Loading states
+- Authentication error handling
+
+Do not create fake authentication.
+
+Do not store plaintext passwords.
+
+If social login is included, configure it only when the relevant provider credentials and settings are available.
+
+After signup, guide the user through a multi-step onboarding process.
+
+Step 1: Personal details
+
+- Full name
+- Preferred language
+- Contact information, if needed
+
+Step 2: Business details
+
+- Business name
+- Business category
+- Business address
+- State
+- City
+- PIN code
+- Currency
+- Financial year settings
+
+Step 3: Business preferences
+
+- GST registered: Yes/No
+- Invoice numbering preference
+- Default payment methods
+- Default tax settings
+
+Step 4: Business setup
+
+- Add first product or service
+- Add first customer
+- Option to skip and continue
+
+Step 5: Finish
+
+- Show a welcome screen
+- Create the business workspace
+- Redirect to the dashboard
+
+Validate all fields.
+
+Never ask for unnecessary sensitive personal information.
+
+A user may belong to multiple businesses in the future.
+
+Design the data model to support multiple business workspaces while keeping all records properly isolated.
+
+==================================================
+7. MAIN DASHBOARD
+
+Create a premium application dashboard.
+
+Desktop layout:
+
+- Collapsible dark forest-green sidebar
+- Clean top navigation
+- Search field
+- Date filter
+- Notification icon
+- Business switcher
+- User profile menu
+
+Mobile layout:
+
+- Compact header
+- Responsive content cards
+- Touch-friendly controls
+- Mobile navigation or drawer
+- No horizontal overflow
+- Tables transformed into usable mobile layouts
+
+Sidebar:
+
+- Dashboard
+- Sales
+- Invoices
+- Purchases
+- Expenses
+- Customers
+- Suppliers
+- Udhaar
+- Inventory
+- Reports
+- AI Assistant
+- Reminders
+- Team
+- Settings
+
+Dashboard summary cards:
+
+1. Total Sales
+2. Total Expenses
+3. Outstanding Customer Credit
+4. Estimated Gross Profit
+
+Clearly distinguish actual revenue, cash received, outstanding receivables, expenses, and estimated profit.
+
+Do not calculate profit simply as sales minus expenses when cost of goods sold is unavailable.
+
+Display a clear empty state when a business has no data.
+
+Never display invented transactions as actual user data.
+
+Use an optional demo mode with clearly labelled sample data.
+
+Dashboard charts:
+
+- Sales over time
+- Revenue versus expenses
+- Payment collection trends
+- Top-selling products
+- Stock alerts
+- Outstanding customer balances
+
+Add date filters:
+
+- Today
+- Last 7 days
+- Last 30 days
+- This month
+- Previous month
+- Custom range
+
+Every dashboard card and chart must use actual database data.
+
+Update reports when records are created, edited, or deleted.
+
+Use correct timezone handling and currency formatting.
+
+Default currency: INR.
+
+==================================================
+8. SMART BILLING AND INVOICES
+
+Implement functional invoice creation.
+
+Invoice fields:
+
+- Invoice number
+- Invoice date
+- Due date
+- Customer
+- Customer contact details, where appropriate
+- Product or service items
+- Quantity
+- Unit
+- Unit price
+- Discount
+- Tax rate
+- Line-item subtotal
+- Total discount
+- Total tax
+- Grand total
+- Amount paid
+- Outstanding balance
+- Payment status
+- Notes
+
+Support:
+
+- Draft invoices
+- Finalised invoices
+- Paid invoices
+- Partially paid invoices
+- Overdue invoices
+- Cancelled invoices, with audit history
+
+Allow users to:
+
+- Create invoices
+- Edit drafts
+- View invoices
+- Print invoices
+- Download invoice PDFs
+- Record payments
+- Share invoice links securely
+- Search and filter invoices
+
+Create a professional printable invoice template with:
+
+- Vyaparo branding
+- Business information
+- Customer information
+- Invoice number and dates
+- Itemised table
+- Tax and discount breakdown
+- Totals
+- Payment instructions
+- Optional bank or UPI details supplied by the business owner
+
+Do not invent bank details or payment addresses.
+
+Invoice numbering must be generated safely on the server and must not produce duplicate numbers within the relevant business and numbering scope.
+
+Once an invoice is finalised, preserve its historical financial details.
+
+Corrections to finalised invoices must follow a controlled process rather than silently changing historical records.
+
+Support configurable tax settings.
+
+GST-related calculations must be based on applicable business configuration and verified rules.
+
+Do not represent a basic invoice generator as a complete GST filing or compliance solution.
+
+Where e-invoicing or other regulated integrations are required, identify them as separate integrations.
+
+==================================================
+9. SALES AND PURCHASES
+
+Sales management:
+
+- Record a sale
+- Select customer
+- Add products or services
+- Enter quantities and prices
+- Apply permitted discounts
+- Calculate applicable tax
+- Select payment method
+- Record partial payments
+- Generate invoice or receipt
+- Update inventory where applicable
+
+Purchase management:
+
+- Record supplier purchases
+- Add purchased products
+- Record purchase quantities and costs
+- Record payment status
+- Track outstanding supplier balances
+- Update inventory after a confirmed purchase
+
+Avoid double-counting.
+
+A sale and its corresponding invoice must not be counted as two separate sales.
+
+A purchase and its payment must not be counted as two separate expenses.
+
+Maintain consistent transaction references.
+
+==================================================
+10. EXPENSE MANAGEMENT
+
+Build an expense manager.
+
+Features:
+
+- Add expense
+- Edit permitted expense records
+- Delete or void records according to audit rules
+- Expense category
+- Date
+- Amount
+- Payment method
+- Description
+- Optional supplier
+- Optional receipt attachment
+- Search and filters
+- Monthly summaries
+- Category-wise charts
+
+Example categories:
+
+- Rent
+- Electricity
+- Transport
+- Salaries
+- Internet
+- Packaging
+- Repairs
+- Marketing
+- Office supplies
+- Other
+
+Allow custom categories.
+
+Support CSV export.
+
+Use secure file upload rules if receipt attachments are supported.
+
+Prevent users from viewing attachments belonging to other businesses.
+
+==================================================
+11. CUSTOMER MANAGEMENT
+
+Customer features:
+
+- Add customer
+- Edit customer
+- View customer profile
+- Search customers
+- Contact information
+- Customer transaction history
+- Total invoiced amount
+- Total amount received
+- Outstanding balance
+- Payment history
+- Notes
+- Optional credit limit
+- Optional payment terms
+
+Do not expose customer contact information publicly.
+
+Validate phone numbers and email addresses where supplied.
+
+Provide a customer ledger showing invoices, payments, adjustments, and outstanding balances.
+
+Make the ledger auditable and easy to understand.
+
+==================================================
+12. UDHAR AND PAYMENT TRACKING
+
+This is a key feature for Indian small businesses.
+
+Build a dedicated customer credit-management module.
+
+Features:
+
+- Credit sales
+- Outstanding balances
+- Partial payments
+- Full payments
+- Due dates
+- Payment history
+- Customer ledger
+- Overdue balance reports
+- Payment reminder scheduling
+- Optional credit limits
+- Customer-wise summaries
+
+A customer balance should be derived from the relevant invoices, credit transactions, payments, and valid adjustments.
+
+Never calculate balances by simply overwriting a single number without preserving the transaction history.
+
+When a payment is recorded:
+
+- Validate the amount
+- Link it to the correct customer and business
+- Record payment date and method
+- Prevent duplicate submission
+- Update the corresponding outstanding balance
+- Preserve an audit trail
+
+Support payment reminders through:
+
+- Copyable reminder messages
+- WhatsApp click-to-chat links when configured
+- Email integration when configured
+
+Do not claim that WhatsApp messages or emails are automatically sent unless a real, authorised integration is implemented.
+
+Never send reminders without appropriate user action or configured consent.
+
+==================================================
+13. INVENTORY MANAGEMENT
+
+Build a functional inventory system.
+
+Product fields:
+
+- Product name
+- SKU
+- Barcode, optional
+- Category
+- Unit
+- Purchase cost
+- Selling price
+- Opening stock
+- Current stock
+- Low-stock threshold
+- Tax configuration
+- Product status
+- Optional image
+
+Features:
+
+- Add product
+- Edit product
+- Archive product
+- Stock adjustments
+- Stock movement history
+- Purchase stock entries
+- Sale stock deductions
+- Low-stock alerts
+- Inventory valuation estimates
+- Search and filters
+- CSV import
+- CSV export
+
+Track stock movements in a separate table.
+
+Do not rely exclusively on a manually editable stock number.
+
+Validate stock changes server-side.
+
+Use database transactions or equivalent safe operations to prevent incorrect stock updates during concurrent sales.
+
+Support configurable behaviour for negative stock.
+
+If negative stock is disabled, reject transactions that would reduce stock below zero.
+
+Show understandable error messages.
+
+Use appropriate decimal precision for quantity, cost, tax, and currency values.
+
+==================================================
+14. SUPPLIERS AND TEAM MANAGEMENT
+
+Suppliers:
+
+- Supplier profiles
+- Contact details
+- Purchase history
+- Outstanding supplier balances
+- Payment history
+
+Team management:
+
+- Business owner
+- Administrator
+- Manager
+- Staff
+
+Implement role-based permissions.
+
+Examples:
+
+- Owner: Full business access
+- Administrator: Configurable operational permissions
+- Manager: Sales, inventory, customers, and reports as authorised
+- Staff: Restricted access based on assigned permissions
+
+A staff member must not automatically gain access to:
+
+- Subscription billing
+- Sensitive owner settings
+- Other businesses
+- Unauthorised financial reports
+- Private account data
+
+Enforce permissions on the server and database, not merely by hiding buttons.
+
+Do not expose an invitation feature as functional until invitations, membership verification, and permissions are implemented.
+
+==================================================
+15. REPORTS AND ANALYTICS
+
+Create a professional reports centre.
+
+Required reports:
+
+- Sales report
+- Purchase report
+- Expense report
+- Collection report
+- Outstanding customer credit report
+- Supplier payable report
+- Inventory report
+- Low-stock report
+- Product performance report
+- Cash-flow summary
+- Profit and loss estimate
+
+Support:
+
+- Date filters
+- Customer filters
+- Product filters
+- Category filters
+- CSV export
+- Print-friendly layouts
+
+Report calculations must be based on documented accounting rules.
+
+Distinguish:
+
+- Sales value
+- Cash received
+- Accounts receivable
+- Purchases
+- Operating expenses
+- Cost of goods sold
+- Estimated gross profit
+- Estimated operating profit
+
+Do not label sales minus operating expenses as net profit when cost of goods sold, taxes, or other relevant costs are missing.
+
+Explain any estimates and exclusions.
+
+Use Indian number formatting.
+
+Examples:
+₹1,25,000.00
+₹12,450.00
+
+Use Asia/Kolkata as the default business timezone, with appropriate timezone configuration.
+
+==================================================
+16. AI BUSINESS ASSISTANT
+
+Create a dedicated AI assistant page.
+
+The assistant should help business owners understand their own business data.
+
+Example questions:
+
+- How much did I sell this month?
+- Which products are running low?
+- Which customers have overdue balances?
+- What were my largest expense categories?
+- Which products sold the most last week?
+- How much money have I collected this month?
+- Which invoices need attention?
+
+Architecture:
+
+- Use a server-side AI integration.
+- Keep API keys on the server.
+- Define strict access controls.
+- Retrieve only data belonging to the authenticated business.
+- Validate tool arguments.
+- Restrict the assistant to permitted business operations.
+- Apply rate limits and usage quotas.
+- Provide useful error handling.
+
+The AI assistant must not have unrestricted SQL access.
+
+Implement controlled server-side functions for supported queries.
+
+Use structured outputs when appropriate.
+
+Do not allow model-generated instructions to bypass authentication, business isolation, or permissions.
+
+The assistant must distinguish between:
+
+- Actual recorded facts
+- Calculated estimates
+- Recommendations
+- Missing information
+
+If the data is unavailable, the assistant should say so.
+
+Never fabricate sales, customers, products, balances, or business performance.
+
+For recommendations, clearly label them as suggestions rather than guaranteed business outcomes.
+
+Do not send invoices, change records, delete transactions, or trigger payments through AI without an explicit user action and appropriate confirmation.
+
+If an AI API key is unavailable, show a clear configuration message and keep the rest of the application functional.
+
+Do not pretend the AI assistant is connected when it is not.
+
+==================================================
+17. SUBSCRIPTION AND PRICING
+
+Implement a subscription-ready architecture.
+
+Initial proposed plans:
+
+FREE:
+
+- One business workspace
+- Basic customer management
+- Limited invoices per month
+- Basic expense tracking
+- Basic inventory
+- Basic dashboard
+
+STARTER:
+₹99/month
+
+GROWTH:
+₹249/month
+
+PRO:
+₹499/month
+
+These prices are initial business hypotheses and must be configurable.
+
+Do not hardcode subscription entitlements throughout the frontend.
+
+Store plans and feature limits in a central configuration or database-backed plan system.
+
+Define:
+
+- Plan name
+- Price
+- Billing interval
+- Currency
+- Feature entitlements
+- Usage limits
+- Active or inactive status
+
+Features to gate by plan:
+
+- Invoice limits
+- Product limits
+- Number of business workspaces
+- Team members
+- AI usage
+- Advanced reports
+- Data exports
+- Automation features
+
+Provide:
+
+- Current plan display
+- Upgrade screen
+- Billing history
+- Subscription status
+- Renewal date when available
+- Cancellation workflow
+- Payment status
+
+Do not mark a subscription as paid based only on a client-side success screen.
+
+Use verified server-side payment events or signed webhook events.
+
+Handle duplicate webhook deliveries safely.
+
+Handle failed, pending, cancelled, and refunded payments appropriately.
+
+==================================================
+18. PAYMENT GATEWAY ARCHITECTURE
+
+Prepare for integration with a suitable Indian payment gateway such as Razorpay or another supported provider.
+
+Do not require live payment credentials to develop the rest of the application.
+
+Use a test/sandbox mode when credentials are available.
+
+Implement payment operations on the server.
+
+Never place secret gateway keys in frontend environment variables.
+
+Use signed webhook verification.
+
+Verify order and payment identifiers server-side.
+
+Do not trust client-submitted payment amounts or subscription statuses.
+
+Use idempotency safeguards for payment processing where supported.
+
+If payment credentials are missing:
+
+- Display a configuration notice to administrators.
+- Allow the application to run without live payments.
+- Do not fabricate successful payments.
+- Do not grant paid entitlements without verified payment.
+
+The system should support future subscription checkout, plan upgrades, cancellations, and payment history.
+
+==================================================
+19. DATABASE SCHEMA
+
+Design a robust PostgreSQL schema with migrations.
+
+At minimum, consider the following tables:
+
+profiles
+businesses
+business_members
+business_invitations
+business_settings
+products
+product_categories
+inventory_movements
+customers
+suppliers
+invoices
+invoice_items
+sales
+sale_items
+purchases
+purchase_items
+payments
+expenses
+expense_categories
+customer_ledger_entries
+supplier_ledger_entries
+reminders
+activity_logs
+subscription_plans
+subscriptions
+payment_events
+usage_counters
+ai_usage_logs
+
+Add any necessary supporting tables.
+
+Use UUID identifiers where appropriate.
+
+Include:
+
+- created_at
+- updated_at where applicable
+- business_id on business-owned records
+- Foreign key constraints
+- Unique constraints
+- Appropriate indexes
+- Numeric types with suitable precision for money
+- Appropriate status fields
+- Referential integrity
+- Migration files
+
+Use transactions for financial operations and stock updates.
+
+Avoid duplicated sources of truth.
+
+Clearly document how invoice totals, payment balances, stock quantities, and report figures are calculated.
+
+Design the database to support multiple businesses and multiple users.
+
+==================================================
+20. SECURITY AND DATA ISOLATION
+
+Security is mandatory.
+
+Implement:
+
+- Supabase Row Level Security on all relevant business tables
+- Verified membership checks
+- Role-based access control
+- Server-side validation
+- Secure authentication flows
+- Input validation
+- Output escaping
+- Rate limiting for sensitive operations
+- Secure file upload rules
+- Safe error handling
+- Appropriate security headers
+- Audit logging for important financial changes
+
+A user must never access another business's private records by changing a URL, UUID, request body, or query parameter.
+
+Test cross-business access attempts.
+
+Prevent insecure direct object references.
+
+Do not expose internal database errors, private keys, or stack traces to users.
+
+Avoid collecting unnecessary personal information.
+
+Create a clear data deletion and account closure workflow.
+
+Where records need to be retained for legitimate business or legal reasons, explain the relevant retention policy.
+
+Never promise absolute security.
+
+==================================================
+21. SEARCH, FILTERS AND DATA TABLES
+
+All important lists must support useful search and filtering.
+
+Provide:
+
+- Search by name
+- Search by invoice number
+- Date filters
+- Status filters
+- Category filters
+- Sorting
+- Pagination
+- Empty states
+- Loading skeletons
+- Error states
+- Clear filters
+- Responsive mobile views
+
+Avoid loading every record into the browser.
+
+Use server-side pagination and filtering for large datasets.
+
+Preserve filters when navigating where appropriate.
+
+==================================================
+22. IMPORT AND EXPORT
+
+Provide CSV export for supported business records.
+
+Where CSV import is supported:
+
+- Validate headers
+- Validate data types
+- Check required fields
+- Preview records before import
+- Show row-level errors
+- Prevent accidental duplicate records
+- Confirm before committing changes
+
+Do not import arbitrary executable files.
+
+Do not expose one business's export to another business.
+
+If importing a financial or inventory file fails, explain what failed and how to correct it.
+
+==================================================
+23. NOTIFICATIONS AND REMINDERS
+
+Build an in-app notification centre.
+
+Supported notifications:
+
+- Low-stock alerts
+- Overdue invoices
+- Upcoming payment due dates
+- Failed payment notices
+- Important account events
+
+Allow users to dismiss notifications where appropriate.
+
+For scheduled reminders, implement a real scheduled backend mechanism when required.
+
+Do not rely on a browser tab remaining open to deliver scheduled notifications.
+
+Clearly distinguish in-app notifications from email, SMS, and WhatsApp notifications.
+
+Only show external notification channels as active when their integrations are configured.
+
+==================================================
+24. UI COMPONENTS AND DESIGN QUALITY
+
+Create reusable components:
+
+- Button
+- Input
+- Select
+- Date picker
+- Modal
+- Confirmation dialog
+- Data table
+- Status badge
+- Dashboard card
+- Chart card
+- Toast notification
+- Sidebar
+- Mobile navigation
+- Dropdown menu
+- Pagination
+- Search box
+- Empty state
+- Loading skeleton
+- Error state
+- Form validation message
+- Upgrade prompt
+
+Design standards:
+
+- Consistent spacing
+- Clear visual hierarchy
+- Rounded corners
+- Subtle borders
+- Carefully limited shadows
+- Readable typography
+- Smooth but restrained transitions
+- Accessible keyboard navigation
+- Visible focus indicators
+- Proper labels for form fields
+- Responsive charts and tables
+
+Avoid:
+
+- Excessive animations
+- Fake buttons
+- Excessive glassmorphism
+- Unreadable small text
+- Unnecessary gradients
+- Huge empty spaces
+- Inconsistent icon styles
+- Overcrowded dashboards
+
+Use accessible contrast and respect reduced-motion preferences.
+
+==================================================
+25. LANGUAGE SUPPORT
+
+Support English and Hindi.
+
+Add a language selector.
+
+Use a translation dictionary or a suitable internationalisation library.
+
+All interface strings should be organised for translation.
+
+Avoid hardcoding user-facing strings throughout components.
+
+Translate:
+
+- Navigation
+- Buttons
+- Forms
+- Validation messages
+- Empty states
+- Dashboard labels
+- Billing screens
+- Settings
+- Help text
+
+Use proper Hindi text rather than awkward machine-generated translations.
+
+Keep product and brand names unchanged.
+
+Currency defaults to INR.
+
+Format dates, numbers, and currency appropriately.
+
+==================================================
+26. SEO AND PUBLIC WEBSITE PERFORMANCE
+
+Optimise the public marketing pages.
+
+Include:
+
+- Unique page titles
+- Meta descriptions
+- Canonical URLs
+- Open Graph metadata
+- Social sharing metadata
+- Sitemap generation
+- robots.txt
+- Favicon
+- Semantic HTML
+- Structured data where appropriate
+- Optimised images
+- Lazy loading where appropriate
+
+Use the final verified production domain from environment configuration.
+
+Do not index private dashboards, account pages, customer records, or invoices.
+
+Avoid exposing private application content in sitemap entries.
+
+Do not create hundreds of automatically generated low-quality SEO pages.
+
+Prioritise helpful, original content.
+
+Performance requirements:
+
+- Fast initial page load
+- Code splitting
+- Lazy loading for heavy modules
+- Optimised bundle sizes
+- Efficient database queries
+- Responsive images
+- Avoid unnecessary network requests
+
+Measure real performance rather than claiming arbitrary performance scores.
+
+==================================================
+27. LEGAL AND SUPPORT PAGES
+
+Create editable pages for:
+
+- About
+- Contact
+- Privacy Policy
+- Terms of Service
+- Refund and Cancellation Policy
+- Security
+- Help Centre
+
+Do not invent:
+
+- Registered company details
+- Office addresses
+- Customer support phone numbers
+- Certifications
+- Legal registrations
+- Partnerships
+- Guarantees
+
+Use clearly identified placeholders for details that the owner must provide.
+
+Explain how customers can contact support.
+
+The privacy policy should accurately reflect actual data collection and third-party integrations.
+
+The terms and refund policies must be reviewed and adapted before launch.
+
+Do not claim that Vyaparo is an officially certified accounting or tax-compliance product unless that claim is verified.
+
+==================================================
+28. ADMINISTRATION AND CONFIGURATION
+
+Design a secure administrative capability for the platform owner.
+
+Administrative features may include:
+
+- User account overview
+- Business workspace overview
+- Subscription overview
+- Feature and plan configuration
+- Usage monitoring
+- Error monitoring
+- Support request management
+
+Platform administration must be separate from ordinary business-owner permissions.
+
+Never grant administrator access based solely on a user-editable profile field.
+
+Use a verified server-side role or another secure authorisation mechanism.
+
+Keep privileged operations server-side.
+
+Log important administrative actions.
+
+==================================================
+29. ERROR HANDLING AND RELIABILITY
+
+Provide:
+
+- Global error boundary
+- Form-level validation
+- Network error messages
+- Retry actions where safe
+- Session expiration handling
+- Database error handling
+- Payment error handling
+- AI service error handling
+- Empty states
+- Loading states
+
+Avoid silently swallowing errors.
+
+Prevent duplicate submissions.
+
+Use idempotent server operations where appropriate.
+
+Use optimistic UI updates only when rollback and error handling are implemented correctly.
+
+Financial operations must remain consistent even if a browser request is retried.
+
+==================================================
+30. TESTING REQUIREMENTS
+
+Create tests for critical business operations.
+
+Authentication:
+
+- Signup and login flows
+- Protected routes
+- Session handling
+
+Data security:
+
+- Business A cannot access Business B's data
+- Staff cannot perform unauthorised actions
+- Public requests cannot access private records
+
+Financial operations:
+
+- Invoice calculations
+- Discount calculations
+- Tax calculations
+- Partial payments
+- Outstanding balances
+- Duplicate payment prevention
+- Report calculations
+
+Inventory:
+
+- Stock increases
+- Stock decreases
+- Insufficient-stock handling
+- Concurrent stock updates where practical
+
+Subscriptions:
+
+- Plan entitlements
+- Unpaid subscriptions
+- Verified payment events
+- Duplicate webhook handling
+
+UI:
+
+- Mobile navigation
+- Form validation
+- Loading states
+- Error states
+- Empty states
+
+Provide instructions for running the test suite.
+
+Fix identified errors rather than hiding them.
+
+==================================================
+31. ENVIRONMENT CONFIGURATION
+
+Create a complete .env.example.
+
+Include only the environment variables required by the actual implementation.
+
+Examples may include:
+
+VITE_SUPABASE_URL=
+VITE_SUPABASE_PUBLISHABLE_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+AI_API_KEY=
+PAYMENT_GATEWAY_KEY_ID=
+PAYMENT_GATEWAY_KEY_SECRET=
+PAYMENT_WEBHOOK_SECRET=
+PUBLIC_SITE_URL=
+
+These are examples, not a requirement to use every variable.
+
+Never prefix secret keys with VITE_.
+
+Never commit real secrets to GitHub.
+
+Document which variables are needed locally and which belong in Vercel or server-side configuration.
+
+Do not make the application crash because an optional AI or payment integration has not been configured.
+
+Required integrations must display a clear setup message rather than pretending to work.
+
+==================================================
+32. GITHUB AND VERCEL DEPLOYMENT
+
+The final application must be deployable through GitHub and Vercel.
+
+Provide a detailed README covering:
+
+1. Project overview
+2. Technology stack
+3. Local installation
+4. Dependency installation
+5. Environment variables
+6. Supabase project setup
+7. Database migrations
+8. Row Level Security setup
+9. Authentication configuration
+10. AI integration setup
+11. Payment gateway setup
+12. Local development
+13. Production build
+14. GitHub repository setup
+15. Vercel deployment
+16. Environment variable configuration in Vercel
+17. Domain connection
+18. Troubleshooting
+
+Ensure the production build command works.
+
+Use the appropriate output directory for the chosen build tool.
+
+Configure client-side routing correctly for Vercel.
+
+Do not add unnecessary deployment configuration.
+
+Do not assume that environment variables automatically transfer from the local machine to Vercel.
+
+Clearly explain that database migrations and backend configuration must be applied to the intended Supabase project.
+
+==================================================
+33. IMPLEMENTATION STRATEGY
+
+Build the application in the following order.
+
+PHASE 1 — FOUNDATION
+
+- Project structure
+- Design system
+- Public landing page
+- Responsive navigation
+- Authentication
+- Onboarding
+- Database schema
+- Business isolation and security policies
+
+PHASE 2 — CORE BUSINESS FEATURES
+
+- Dashboard
+- Customers
+- Products
+- Inventory
+- Sales
+- Invoices
+- Expenses
+- Payments
+- Udhaar tracking
+
+PHASE 3 — REPORTING
+
+- Business analytics
+- Sales reports
+- Expense reports
+- Outstanding balances
+- Inventory reports
+- CSV exports
+
+PHASE 4 — ADVANCED FEATURES
+
+- AI business assistant
+- Team management
+- Reminders
+- Import tools
+- Subscription plans
+- Payment gateway integration
+
+PHASE 5 — PRODUCTION READINESS
+
+- Automated tests
+- Security checks
+- Error handling
+- Performance optimisation
+- SEO
+- Deployment documentation
+
+Do not build all components in a single enormous file.
+
+Use separate modules, services, hooks, types, schemas, and reusable UI components.
+
+Keep database operations in a dedicated data-access layer.
+
+Keep business rules separate from presentation components.
+
+Avoid duplicated code.
+
+==================================================
+34. ACCEPTANCE CRITERIA
+
+The application is not complete until the following critical requirements are met.
+
+1. The public landing page is polished and responsive.
+2. Navigation links lead to real pages.
+3. Authentication uses the configured backend.
+4. Users can create and access their own business workspace.
+5. Business records persist in the database.
+6. Business data is isolated by secure database policies.
+7. Users can create and view customers.
+8. Users can create and manage products.
+9. Inventory updates are recorded correctly.
+10. Users can create invoices and calculate totals.
+11. Payment recording updates the correct balances.
+12. Expense records appear in reports.
+13. Dashboard figures come from real records.
+14. AI functions only when configured and never fabricates business records.
+15. Subscription entitlements are checked securely.
+16. Payment status is verified server-side.
+17. No critical secret is exposed in frontend code.
+18. Mobile screens are usable.
+19. The production build succeeds.
+20. README instructions are complete enough for deployment.
+21. Important calculations and security rules have automated tests.
+22. No important feature is falsely presented as functional when it is only a placeholder.
+
+==================================================
+35. FINAL INSTRUCTIONS TO THE AI DEVELOPER
+
+First inspect the current project and determine whether a codebase already exists.
+
+Preserve working functionality unless changes are required.
+
+Then implement the application in manageable stages.
+
+Do not stop after producing a landing page.
+
+Do not return only a project plan, code snippets, screenshots, or pseudocode.
+
+Create the actual source files in the available development environment.
+
+If the environment supports direct project-file editing, use it.
+
+If the project is too large for one generation, complete it incrementally and preserve all previous work.
+
+After each major phase:
+
+- Run the available checks.
+- Fix errors.
+- Verify routes.
+- Verify imports.
+- Check TypeScript types.
+- Test important interactions.
+- Confirm that the build still works.
+
+Do not invent successful test results.
+
+Do not claim that Supabase, AI, payment gateways, or external messaging services are connected until the required configuration and verification are complete.
+
+If credentials or external configuration are missing, implement the integration interface and provide clear setup instructions.
+
+At the end, provide:
+
+1. Project file structure.
+2. Implemented features.
+3. Database migration files.
+4. Required environment variables.
+5. Supabase setup instructions.
+6. GitHub and Vercel deployment instructions.
+7. Test results that were actually obtained.
+8. Features that still require credentials or external setup.
+9. Known limitations.
+10. A clear next-step checklist for production launch.
+
+The final result should be a premium, secure, maintainable, mobile-friendly business management SaaS application branded as Vyaparo.
+
+Prioritise correctness, security, usability, and a coherent user experience over superficial feature quantity.

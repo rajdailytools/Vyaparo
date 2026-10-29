@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --forest: #0B2E26;
+    --emerald: #0F8F5F;
+    --lime: #A7F432;
+    --mint: #E8F9F0;
+    --bg-main: #F8FFF9;
+    --text-primary: #15251F;
+    --text-secondary: #61736A;
+    --border-main: #DCE9E1;
+  }
+
+  body {
+    background-color: #F8FFF9;
+    color: #15251F;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FFF9;
+}
+::-webkit-scrollbar-thumb {
+  background: #DCE9E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0F8F5F;
+}
+
+/* Print styles for invoices */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Vyaparo - Smart Business Management Platform",
+  "description": "Complete, modern business management SaaS for Indian SMBs. Manage billing, GST invoices, inventory, customer udhaar, expenses, and AI business insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
